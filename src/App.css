@@ -15,6 +15,14 @@ body {
   background-color: white;
 }
 
+button:hover {
+  background-color: limegreen;
+}
+
+input::placeholder {
+  color: #b0b0b0;
+}
+
 .TaskHeader {
   font-size: 48px;
   padding: 0.5em;
@@ -26,3 +34,46 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
+
+.WorldClock {
+  padding: 20px;
+}
+
+.ClockAddForm {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.ClockAddForm * {
+  display: block;
+}
+
+.ClockAddForm input, .ClockAddForm button {
+  padding: 0.3em 0.5em;
+  border: 1px solid black;
+}
+
+.ClockAddForm button {
+  margin-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.ClockAddForm-error {
+  margin: 0.5em 1em;
+  color: red;
+}
+
+.ClockInput {
+  margin-right: 2em;
+}
+
+.ClockInput p {
+  margin: 0 0 0.3em 1em;
+}
+
+
+
+
