@@ -74,6 +74,43 @@ input::placeholder {
   margin: 0 0 0.3em 1em;
 }
 
+.WorldClock-clocks {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Clock {
+  margin-right: 3em;
+}
+
+.Clock-title {
+  text-align: center;
+}
+
+.ClockFace {
+  position: relative;
+  width: 7em;
+  height: 7em;
+  margin: 0.5em 0;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.ClockFace-button {
+  position: absolute;
+  top: -0.75em;
+  right: -0.75em;
+  width: 1.5em;
+  height: 1.5em;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.ClockNumbers {
+  text-align: center;
+}
+
 
 
 

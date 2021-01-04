@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getTime } from '../utils/utils';
+import ClockFace from './ClockFace';
+import ClockNumbers from './ClockNumbers';
+import { getTime, getAngles } from '../utils/utils';
 
 class Clock extends React.Component {
   constructor(props) {
     super(props);
-    this.time = getTime();
-    this.offset = props.timezone * 3600;
+    this.utcOffset = props.timezone * 60;
   }
 
   static propTypes = {
@@ -15,8 +16,12 @@ class Clock extends React.Component {
     onButtonClick: PropTypes.func.isRequired 
   }
 
+  state = {
+    time: getTime(this.props.timezone * 60)
+  }
+
   componentDidMount() {
-    this.timerId = setInterval(this.timer, 100);
+    this.timerId = setInterval(() => this.timer(), 100);
   }
 
   componentWillUnmount() {
@@ -24,19 +29,28 @@ class Clock extends React.Component {
   }
 
   timer() {
+    const time = getTime(this.utcOffset);
+    if (time === this.state.time) {
+      return;
+    }
 
+    this.setState({ time });
   }
 
   render() {
     const { name, onButtonClick } = this.props;
+    const { hourAngle, minAngle, secAngle } = getAngles(this.state.time);
 
     return (
       <div className="Clock">  
-        <p>{name}</p>
-        <div>
-          <button type="button" onClick={onButtonClick}>x</button>
-        </div>
-        <p>{this.offset}</p>
+        <p className="Clock-title">{name}</p>
+        <ClockFace 
+          hourAngle={hourAngle}
+          minAngle={minAngle}
+          secAngle={secAngle}
+          onButtonClick={onButtonClick} 
+        />
+        <ClockNumbers time={this.state.time} />
       </div>
     );
   }
