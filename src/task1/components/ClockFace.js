@@ -1,13 +1,19 @@
 import PropTypes from 'prop-types';
+import arrow from '../img/arrow.png';
 
 function ClockFace(props) {
   const { hourAngle, minAngle, secAngle, onButtonClick } = props;
 
   return (
     <div className="ClockFace">
-      <p>{hourAngle}</p>
-      <p>{minAngle}</p>
-      <p>{secAngle}</p>
+      <div className="ClockFace-hand-hour" style={{ transform: `rotate(${hourAngle}deg)` }}>
+        <img className="ClockFace-arrow" src={arrow} width="10px" alt="arrow" /> 
+      </div>
+      <div className="ClockFace-hand-minute" style={{ transform: `rotate(${minAngle}deg)` }}>
+        <img className="ClockFace-arrow" src={arrow} width="10px" alt="arrow" /> 
+      </div>
+      <div className="ClockFace-hand-second" style={{ transform: `rotate(${secAngle}deg)` }}>
+      </div>
       <button className="ClockFace-button" type="button" onClick={onButtonClick}>x</button>
     </div>
   );
