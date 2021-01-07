@@ -76,7 +76,7 @@ class Notes extends React.Component {
         </div>
         <form className="Notes-form" onSubmit={(event) => this.addNote(event)}>
           <label className="Notes-form-label">
-            New notes
+            New Note
             <textarea className="Notes-form-input" rows="8" name="note" />
           </label>
           <button className="Notes-button-add" type="submit">&#x27A4;</button>
