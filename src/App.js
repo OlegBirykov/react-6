@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import TaskHeader from './TaskHeader';
 import WorldClock from './task1/WorldClock';
+import Crud from './task2/Notes';
 
 function App() {
   return (<React.Fragment>
@@ -11,6 +12,7 @@ function App() {
     </div>
     <div className="task-2">
       <TaskHeader title="Задача 2" />
+      <Crud />
     </div>
   </React.Fragment>);
 }

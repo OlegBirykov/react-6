@@ -4,7 +4,7 @@
   padding: 0;
   border: none;
   font-family: 'Times New Roman', serif;
-  font-size: 18px;
+  font-size: inherit;
   font-weight: normal;
   line-height: 1.4;
   color: black;
@@ -12,6 +12,11 @@
 }
 
 body {
+  background-color: white;
+  font-size: 18px;
+}
+
+button {
   background-color: white;
 }
 
@@ -30,10 +35,11 @@ input::placeholder {
 }
 
 .TaskHeader-title {
-  font-size: inherit;
   text-align: center;
   text-transform: uppercase;
 }
+
+/* Задача 1 */
 
 .WorldClock {
   padding: 20px;
@@ -144,6 +150,90 @@ input::placeholder {
 
 .ClockNumbers {
   text-align: center;
+}
+
+/* Задача 2 */
+
+.Notes {
+  padding: 20px;
+}
+
+.Notes button {
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.Notes-title {
+  display: flex;
+  align-items: center;
+}
+
+.Notes-title-text {
+  font-size: 2em;
+}
+
+.Notes .Notes-button-update {
+  margin-left: 1em;
+  color: #00a000;
+  transform: rotate(90deg);
+}
+
+.Notes-notes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.Notes-form {
+  position: relative;
+  width: 400px;
+}
+
+.Notes-form-label {
+  display: block;
+}
+
+.Notes-form-input {
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  padding: 1.5em;  
+  font-size: 0.8em;
+  border: 1px solid black;
+}
+
+.Notes .Notes-button-add{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 2.2em;
+  padding-right: 0.3em;
+  text-align: right;
+}
+
+.Note {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 0 2.5em 2em 0;
+  padding: 1.5em;
+  border: 1px solid black;
+}
+
+.Note-text {
+  font-size: 0.8em;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.Note-button-delete {
+  position: absolute;
+  top: -1em;
+  right: -1em;
+  color: #d00000;
 }
 
 
